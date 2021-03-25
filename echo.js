@@ -3,7 +3,12 @@ if (process.argv.length !== 5) {
   process.exit(1)
 }
 
-console.log(process.argv[2], process.argv[3], process.argv[4])
+const str = []
 
+for (let i = 2; i < process.argv.length; i++) {
 
+  str.push(process.argv[i])
+}
+
+console.log(str.join(' '))
 
