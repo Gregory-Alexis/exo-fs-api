@@ -6,7 +6,7 @@ if (process.argv.length < 4) {
 }
 
 for (let i = 2; i < process.argv.length - 1; i++) {
-  if (!fs.existsSync(process.argv[i]).isFile) {
+  if (!fs.existsSync(process.argv[i])) {
     console.log(`Error: ${process.argv[i]} does not exist`)
   }
   if (!fs.statSync(process.argv[i]).isFile()) {

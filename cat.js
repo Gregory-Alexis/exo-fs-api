@@ -10,12 +10,11 @@ if (!fs.existsSync(process.argv[2])) {
   process.exit(1)
 }
 
-const stats = fs.statSync(process.argv[2])
-
-if (!stats.isFile(process.argv[2])) {
+if (!fs.statSync(process.argv[2]).isFile) {
   console.log(`${process.argv[2]} is not a file`)
   process.exit(1)
 }
 
 const str = fs.readFileSync(process.argv[2], 'utf-8')
+
 console.log(str)
