@@ -36,12 +36,17 @@ if (process.argv.length === 5 && isNaN(process.argv[3])) {
 
 if (process.argv.length === 5) {
   const read = fs.readFileSync(process.argv[4], 'utf-8')
-  let txt = read.split('\n').splice(process.argv[3])
-  numStr = Number(process.argv[3])
+  const txt = read.split('\n').splice(process.argv[3])
 
-  console.log(txt.join(' '))
+  if (process.argv[3] > read.length) {
+    console.log('Error: You cannot split more than the length text')
+    process.exit(1)
+  }
+  numStr = Number(process.argv[3])
+  console.log(txt)
+
 } else if (process.argv.length === 3) {
   const read = fs.readFileSync(process.argv[2], 'utf-8')
-  let txt = read.split('\n').splice(7)
-  console.log(txt.join(' '))
+  const txt = read.split('\n').splice(7)
+  console.log(txt)
 }

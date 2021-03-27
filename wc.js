@@ -15,18 +15,17 @@ if (!fs.statSync(process.argv[2]).isFile()) {
   process.exit(1)
 }
 
-let text = fs.readFileSync(process.argv[2], 'utf-8')
-
 if (process.argv.length === 4 && process.argv[3] !== '-l' && process.argv.length === 4 && process.argv[3] !== '-w' && process.argv.length === 4 && process.argv[3] !== '-c') {
   console.log("Enter the correct input ('-w', or '-l', or '-c'")
   process.exit(1)
 }
 
+let text = fs.readFileSync(process.argv[2], 'utf-8')
+
 let res = []
 
 if (process.argv[3] === '-l') {
   res.push(text.split('\n').length)
-
 } else if (process.argv[3] === '-w') {
   res.push(text.split(' ').length)
 } else if (process.argv[3] === '-c') {
