@@ -25,7 +25,7 @@ if (process.argv.length === 3 && !fs.statSync(process.argv[2]).isFile()) {
 }
 
 if (process.argv.length === 5 && process.argv[2] !== '-n') {
-  console.log('Error: this is not the correct symbol: "-n"')
+  console.log('Error: the correct symbol is: "-n"')
   process.exit(1)
 }
 
