@@ -18,7 +18,7 @@ if (!fs.statSync(process.argv[2]).isFile()) {
 let text = fs.readFileSync(process.argv[2], 'utf-8')
 
 if (process.argv.length === 4 && process.argv[3] !== '-l' && process.argv.length === 4 && process.argv[3] !== '-w' && process.argv.length === 4 && process.argv[3] !== '-c') {
-  console.log("Enter the correct input")
+  console.log("Enter the correct input ('-w', or '-l', or '-c'")
   process.exit(1)
 }
 
