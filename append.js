@@ -1,9 +1,11 @@
 const fs = require('fs')
 
 if (process.argv.length < 3) {
-  console.log('Usage: node append.js file1.txt file2.txt file3.txt copyFile.txt')
+  console.log('Usage: node append.js file.txt(as much files you need to copy)  copyFile.txt')
   process.exit(1)
 }
+
+const res = []
 
 for (let i = 2; i < process.argv.length - 1; i++) {
   if (!fs.existsSync(process.argv[i])) {
@@ -14,10 +16,6 @@ for (let i = 2; i < process.argv.length - 1; i++) {
     console.log(`Error: ${process.argv[i]} is not a file`)
     process.exit(1)
   }
-}
-const res = []
-
-for (let i = 2; i < process.argv.length - 1; i++) {
   const txt = fs.readFileSync(process.argv[i], 'utf-8')
   res.push(txt.split('\n'))
 }
