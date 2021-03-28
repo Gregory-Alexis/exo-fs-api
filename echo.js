@@ -6,7 +6,6 @@ if (process.argv.length !== 5) {
 const str = []
 
 for (let i = 2; i < process.argv.length; i++) {
-
   str.push(process.argv[i])
 }
 

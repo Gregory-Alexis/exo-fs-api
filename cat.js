@@ -6,7 +6,7 @@ if (process.argv.length !== 3) {
 }
 
 if (!fs.existsSync(process.argv[2])) {
-  console.log(`${process.argv[2]} does not exist`)
+  console.log(`${process.argv[2]} do not exist`)
   process.exit(1)
 }
 

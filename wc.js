@@ -1,18 +1,19 @@
 const fs = require('fs')
 
 if (process.argv.length < 3 || process.argv.length > 5) {
-  console.log('Usage: node cat.js file.txt')
+  console.log('Usage: node wc.js file.txt (required input -l, -w or -c, if needed) ')
   process.exit(1)
 }
 
-if (!fs.existsSync(process.argv[2])) {
-  console.log('Error: file does not exist')
-  process.exit(1)
-}
-
-if (!fs.statSync(process.argv[2]).isFile()) {
-  console.log('Error: bad input')
-  process.exit(1)
+for (let i = 2; i < process.argv.length - 1; i++) {
+  if (!fs.existsSync(process.argv[i])) {
+    console.log(`Error:${process.argv[i]} do not exist`)
+    process.exit(1)
+  }
+  if (!fs.statSync(process.argv[i]).isFile()) {
+    console.log(`Error:${process.argv[i]} is not a file `)
+    process.exit(1)
+  }
 }
 
 if (process.argv.length === 4 && process.argv[3] !== '-l' && process.argv.length === 4 && process.argv[3] !== '-w' && process.argv.length === 4 && process.argv[3] !== '-c') {

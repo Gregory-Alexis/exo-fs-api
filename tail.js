@@ -7,7 +7,7 @@ if (process.argv.length !== 3 && process.argv.length !== 5) {
 }
 
 if (process.argv.length === 5 && !fs.existsSync(process.argv[4])) {
-  console.log(`Error: ${process.argv[4]} file does not exist`)
+  console.log(`Error: ${process.argv[4]} file do not exist`)
   process.exit(1)
 }
 if (process.argv.length === 5 && !fs.statSync(process.argv[4]).isFile()) {
@@ -16,7 +16,7 @@ if (process.argv.length === 5 && !fs.statSync(process.argv[4]).isFile()) {
 }
 
 if (process.argv.length === 3 && !fs.existsSync(process.argv[2])) {
-  console.log(`Error: ${process.argv[2]} file does not exist`)
+  console.log(`Error: ${process.argv[2]} file do not exist`)
   process.exit(1)
 }
 if (process.argv.length === 3 && !fs.statSync(process.argv[2]).isFile()) {
