@@ -20,6 +20,6 @@ for (let i = 2; i < process.argv.length - 1; i++) {
   res.push(txt.split('\n'))
 }
 
-const resStr = res.join(' ')
+const resStr = res.join('\n')
 fs.writeFileSync(process.argv[5], resStr)
 
