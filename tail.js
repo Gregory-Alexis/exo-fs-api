@@ -47,6 +47,6 @@ if (process.argv.length === 5) {
 
 } else if (process.argv.length === 3) {
   const read = fs.readFileSync(process.argv[2], 'utf-8')
-  const txt = read.split('\n').splice(7)
+  const txt = read.split('\n').splice(-10)
   console.log(txt)
 }
