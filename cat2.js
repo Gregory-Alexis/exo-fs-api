@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-if (process.argv.length < 3 && process.argv.length > 5) {
+if (process.argv.length < 3) {
   console.log('Usage: node cat2.js file.txt')
   process.exit(1)
 }
