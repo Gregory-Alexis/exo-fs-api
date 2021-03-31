@@ -39,7 +39,7 @@ if (process.argv.length === 5) {
   const txt = read.split('\n').splice(process.argv[3]).join('\n')
 
   if (process.argv[3] >= read.split('\n').length) {
-    console.log(`Error: You cannot split more or equal than the length text. Max length limit is: ${read.split('\n').length}`)
+    console.log(`Error: You cannot split more or equal than the length text. The max length limit is: ${read.split('\n').length}`)
     process.exit(1)
   }
   numStr = Number(process.argv[3])
