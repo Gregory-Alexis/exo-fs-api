@@ -36,7 +36,7 @@ if (process.argv.length === 5 && isNaN(process.argv[3])) {
 
 if (process.argv.length === 5) {
   const read = fs.readFileSync(process.argv[4], 'utf-8')
-  const txt = read.split('\n').splice(process.argv[3])
+  const txt = read.split('\n').splice(process.argv[3]).join('\n')
 
   if (process.argv[3] >= read.split('\n').length) {
     console.log(`Error: You cannot split more or equal than the length text. Max length limit is: ${read.split('\n').length}`)
@@ -47,6 +47,6 @@ if (process.argv.length === 5) {
 
 } else if (process.argv.length === 3) {
   const read = fs.readFileSync(process.argv[2], 'utf-8')
-  const txt = read.split('\n').splice(-10)
+  const txt = read.split('\n').splice(-10).join('\n')
   console.log(txt)
 }
