@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 if (process.argv.length < 3) {
-  console.log('Usage: node append.js file.txt(as much files you need to copy)  copyFile.txt')
+  console.log('Usage: node append.js (as much files you need to copy).txt  copyFile.txt')
   process.exit(1)
 }
 
